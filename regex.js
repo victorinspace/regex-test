@@ -53,7 +53,7 @@ console.assert(!testEmail("bonita43@"));
 
 // test whether the str provided is a valid phone
 function testPhone (phone) {
-    let regExPhone = //
+    let regExPhone = /\(?(?:[\d+]{3})\)?[-.\s]?([\d+]{3})[-.\s]?([\d+]{4})/
     return regExPhone.exec(phone)
 }
 
