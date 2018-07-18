@@ -70,8 +70,8 @@ console.assert(!testPhone("mobile"));
 
 // test whether the number (as a string) sent to you is a binary number
 function testBinary (number) {
-    let regExnumber = /(\b[01]+)/
-    return regExnumber.exec(number)
+    let regExBinary = /(\b[01]+)/
+    return regExBinary.exec(number)
 }
 
 console.assert(testBinary("0"));
@@ -85,17 +85,18 @@ console.assert(!testBinary("911"));
 
 // test whether the number sent to you as a binary is an even number
 function testBinaryEven (number) {
-  
+	let num = parseInt(number)
+	return num % 2 == 0 ? true : false
 }
 
-// console.assert(testBinaryEven("10"));
-// console.assert(testBinaryEven("1110100010"));
-// console.assert(!testBinaryEven("1011"));
+console.assert(testBinaryEven("10"));
+console.assert(testBinaryEven("1110100010"));
+console.assert(!testBinaryEven("1011"));
 
 
 // test whether the number sent to yo is a valid hex string
 function testHex (str) {
-  
+
 }
 
 // console.assert(testHex("CAFE"));
@@ -107,7 +108,7 @@ function testHex (str) {
 
 // test whether the str sent to you is valid for currency
 function testMoney (str) {
-  
+
 }
 
 // console.assert(testMoney("$4"));
@@ -133,7 +134,7 @@ function testMoney (str) {
 
 // test whether the str sent to you is a valid zip code
 function testZip (str) {
-  
+
 }
 
 // console.assert(testZip("63936"));
@@ -169,7 +170,7 @@ function markDownLink (text) {
 // This is a somewhat unrealistic challenge - in real life, you wouldn't have to
 // make sure that it isn't bold, as you would have already parsed the bold text.
 function markDownItalics (text) {
-  
+
 }
 
 // console.assert(markDownItalics('This text is not italic.') === 'This text is not italic.');
