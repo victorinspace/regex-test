@@ -70,16 +70,17 @@ console.assert(!testPhone("mobile"));
 
 // test whether the number (as a string) sent to you is a binary number
 function testBinary (number) {
-  
+    let regExnumber = /(\b[01]+)/
+    return regExnumber.exec(number)
 }
 
-// console.assert(testBinary("0"));
-// console.assert(testBinary("1"));
-// console.assert(testBinary("01"));
-// console.assert(testBinary("10"));
-// console.assert(testBinary("1110100010"));
-// console.assert(!testBinary(""));
-// console.assert(!testBinary("911"));
+console.assert(testBinary("0"));
+console.assert(testBinary("1"));
+console.assert(testBinary("01"));
+console.assert(testBinary("10"));
+console.assert(testBinary("1110100010"));
+console.assert(!testBinary(""));
+console.assert(!testBinary("911"));
 
 
 // test whether the number sent to you as a binary is an even number
