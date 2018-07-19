@@ -86,7 +86,7 @@ console.assert(!testBinary("911"));
 // test whether the number sent to you as a binary is an even number
 function testBinaryEven (number) {
 	let num = parseInt(number)
-	return num % 2 == 0 ? true : false
+	return num % 2 == 0 ? true : false // ******************* TO DO: FIX THIS!!!!!!!!
 }
 
 console.assert(testBinaryEven("10"));
@@ -94,43 +94,45 @@ console.assert(testBinaryEven("1110100010"));
 console.assert(!testBinaryEven("1011"));
 
 
-// test whether the number sent to yo is a valid hex string
+// test whether the number sent to you is a valid hex string
 function testHex (str) {
-
+	let regExHex = /\b[0-9A-Fa-f]{3,6}/
+	return regExHex.exec(str)
 }
 
-// console.assert(testHex("CAFE"));
-// console.assert(testHex("9F9"));
-// console.assert(testHex("123"));
-// console.assert(testHex("6720EB3A9D1"));
-// console.assert(!testHex(""));
-// console.assert(!testHex("COFFEE"));
+console.assert(testHex("CAFE"));
+console.assert(testHex("9F9"));
+console.assert(testHex("123"));
+console.assert(testHex("6720EB3A9D1"));
+console.assert(!testHex(""));
+console.assert(!testHex("COFFEE"));
 
 // test whether the str sent to you is valid for currency
 function testMoney (str) {
-
+	let regExMoney = /\$[\d]{0,4}|\,[\d]{0,4}|\,|\.[\d]{0,4}|\.[\d]{2}/ // *******************TO DO: FIX THIS!!!!!!!!
+	return regExMoney.exec(str)
 }
 
-// console.assert(testMoney("$4"));
-// console.assert(testMoney("$19"));
-// console.assert(testMoney("$19.00"));
-// console.assert(testMoney("$3.58"));
-// console.assert(testMoney("$1000"));
-// console.assert(testMoney("$1000.00"));
-// console.assert(testMoney("$1,000"));
-// console.assert(testMoney("$1,000.00"));
-// console.assert(testMoney("$5,555,555"));
-// console.assert(testMoney("$5,555,555.55"));
-// console.assert(testMoney("$45,555,555.55"));
-// console.assert(testMoney("$456,555,555.55"));
-// console.assert(testMoney("$1234567.89"));
-// console.assert(!testMoney(""));
-// console.assert(!testMoney("$12,34"));
-// console.assert(!testMoney("$1234.9"));
-// console.assert(!testMoney("$1234.999"));
-// console.assert(!testMoney("$"));
-// console.assert(!testMoney("31"));
-// console.assert(!testMoney("$$31"));
+console.assert(testMoney("$4"));
+console.assert(testMoney("$19"));
+console.assert(testMoney("$19.00"));
+console.assert(testMoney("$3.58"));
+console.assert(testMoney("$1000"));
+console.assert(testMoney("$1000.00"));
+console.assert(testMoney("$1,000"));
+console.assert(testMoney("$1,000.00"));
+console.assert(testMoney("$5,555,555"));
+console.assert(testMoney("$5,555,555.55"));
+console.assert(testMoney("$45,555,555.55"));
+console.assert(testMoney("$456,555,555.55"));
+console.assert(testMoney("$1234567.89"));
+console.assert(!testMoney(""));
+console.assert(!testMoney("$12,34"));
+console.assert(!testMoney("$1234.9"));
+console.assert(!testMoney("$1234.999"));
+console.assert(!testMoney("$"));
+console.assert(!testMoney("31"));
+console.assert(!testMoney("$$31"));
 
 // test whether the str sent to you is a valid zip code
 function testZip (str) {
